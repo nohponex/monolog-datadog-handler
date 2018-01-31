@@ -18,6 +18,7 @@ use Monolog\Logger;
  *
  * @author Xenofon Spafaridis <nohponex@gmail.com>
  * @since 0.0.0
+ * @version 0.0.1 Make the wrapper compatible with php 7.0
  */
 class DataDogHandler extends AbstractProcessingHandler
 {
@@ -78,7 +79,9 @@ class DataDogHandler extends AbstractProcessingHandler
             $record['message'],
             [
                 'text'       => $record['formatted'],
-                'alert_type' => static::ALERT_TYPE_MAP[$record['level']] ?? 'info',
+                'alert_type' => isset(static::ALERT_TYPE_MAP[$record['level']])
+                                ? static::ALERT_TYPE_MAP[$record['level']]
+                                : 'info',
                 'tags'       => $this->tags,
             ]
         );
