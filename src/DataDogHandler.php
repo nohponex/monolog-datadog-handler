@@ -19,13 +19,14 @@ use Monolog\Logger;
  * @author Xenofon Spafaridis <nohponex@gmail.com>
  * @since 0.0.0
  * @version 0.0.1 Make the wrapper compatible with php 7.0
+ * @version 0.0.2 Remove visibility flag from constant
  */
 class DataDogHandler extends AbstractProcessingHandler
 {
     /**
      * Map Monolog\Logger logging levels to Datadog alert_type
      */
-    protected const ALERT_TYPE_MAP = [
+    const ALERT_TYPE_MAP = [
         Logger::DEBUG     => 'info',
         Logger::INFO      => 'info',
         Logger::NOTICE    => 'warning',
