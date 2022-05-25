@@ -17,7 +17,7 @@
     }
   ],
   "require": {
-    "php": "^7.0",
+    "php": "^7.0 | ^8.0",
     "datadog/php-datadogstatsd": "^1.0",
     "monolog/monolog": "^1.23"
   },
